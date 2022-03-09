@@ -1,0 +1,275 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*==================== VARIABLES CSS ====================*/
+:root {
+    --header-height: 3rem;
+
+    /*========== Colors ==========*/
+    --hue-color: 41;
+
+    /* HSL color mode */
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== Margenes Bottom ==========*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+
+
+/*==================== BASE ====================*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* margin: 0 0 var(--header-height) 0; */
+    margin: 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*==================== REUSABLE CSS CLASSES ====================*/
+
+.section {
+    padding: 2rem 0 4rem;
+}
+
+.section__title {
+    font-size: var(--h1-font-size);
+}
+
+.section__subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-3);
+}
+
+.section__title,
+.section__subtitle {
+    text-align: center;
+}
+
+/*==================== IMAGE MAIN ====================*/
+
+.image__container {
+    text-align: center;
+}
+
+.image__container p {
+    font-size: var(--smaller-font-size);
+    padding: 0 var(--mb-0-75) 0;
+}
+
+.event__section {
+    display: grid;
+    justify-content: center;
+}
+
+/*==================== TIMELINE ====================*/
+
+.event {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+}
+
+
+.event__title {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    width: 200px;
+}
+
+.event__subtitle {
+    display: inline-block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-1);
+    width: 200px;
+}
+
+.event__date {
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
+}
+
+.event__rounder {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+}
+
+.event__line {
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: var(--first-color);
+    transform: translate(6px, -7px);
+}
+
+/*==================== POEM ====================*/
+
+.poem_letters {
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+    padding: 0 var(--mb-0-75) 0;
+}
+
+.poem_letters p {
+    text-align: right;
+}
+
+/*==================== FOOTER ====================*/
+
+.footer.section {
+    box-shadow: 0px -5px 4px rgba(0, 0, 0, 0.05);
+    background-color: var(--first-color-alt);
+}
+
+.footer.section,
+.footer .section__title,
+.footer__container .links a,
+.footer__container a {
+    color: var(--body-color);
+}
+
+.footer__container {
+    display: grid;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.footer__container .links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__container a i {
+    font-size: var(--normal-font-size);
+}
+
+.footer__copy {
+    text-align: center;
+    padding-top: var(--mb-3);
+    color: var(--first-color-lighter);
+}
+
+/*==================== SCROLL BAR ====================*/
+
+::-webkit-scrollbar {
+    width: .60rem;
+    background-color: var(--scroll-bar-color);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color-light);
+}
+
+/*==================== MEDIA QUERIES ====================*/
+
+@media screen and (max-width: 510px) {
+    .event__title {
+        font-size: var(--normal-font-size);
+        font-weight: var(--font-medium);
+        width: 100px;
+    }
+
+    .event__subtitle {
+        display: inline-block;
+        font-size: var(--small-font-size);
+        margin-bottom: var(--mb-1);
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .footer__container .links {
+        flex-direction: column;
+    }
+}
